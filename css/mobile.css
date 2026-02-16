@@ -5,14 +5,24 @@
    ============================================ */
 
 @media (max-width: 768px) {
-    /* 基础布局调整 */
-    html, body {
-        height: auto;
-        overflow-x: hidden;
+    /* 基础布局调整 - 允许页面滚动 */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    html {
+        height: 100% !important;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
     }
     
     body {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
         padding-bottom: 20px;
+        position: static !important;
     }
     
     /* 隐藏右侧功能栏 */
@@ -47,6 +57,7 @@
         margin-bottom: 10px;
         border-radius: 0;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 10;
     }
     
     .header {
@@ -63,28 +74,23 @@
         margin-top: 2px;
     }
     
-    /* 统计卡片横向滚动 - 紧凑布局 */
+    /* 统计卡片 - 居中显示 */
     .stats-bar {
         display: flex;
-        overflow-x: auto;
+        justify-content: center;
+        align-items: center;
         gap: 8px;
         padding: 8px 0;
         margin-bottom: 10px;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
         flex-wrap: nowrap;
-        justify-content: flex-start;
-    }
-    
-    .stats-bar::-webkit-scrollbar {
-        display: none;
     }
     
     .stat-card {
-        flex-shrink: 0;
-        min-width: 70px;
-        padding: 8px 10px;
+        flex: 1;
+        max-width: 80px;
+        padding: 10px 8px;
         border-radius: 8px;
+        text-align: center;
     }
     
     .stat-value {
@@ -187,7 +193,7 @@
         border-color: var(--btn-active-bg);
     }
     
-    /* 主内容区域 */
+    /* 主内容区域 - 允许内容滚动 */
     .main-layout {
         position: relative !important;
         left: auto !important;
@@ -197,7 +203,7 @@
         width: 100%;
         padding: 15px;
         height: auto;
-        overflow-y: visible;
+        overflow: visible;
         margin-top: 20px;
     }
     
@@ -360,8 +366,9 @@
     }
     
     .stat-card {
-        min-width: 60px;
-        padding: 6px 8px;
+        flex: 1;
+        max-width: 70px;
+        padding: 8px 6px;
     }
     
     .stat-value {
