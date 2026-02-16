@@ -1,0 +1,37 @@
+========================================== 
+ Image Compress Tool 
+ Compress to 100KB, Crop to 1:1 
+ Start: 2026/02/15 ÖÜÈÕ 22:23:18.63 
+========================================== 
+ 
+[Info] ImageMagick found 
+[Debug] Current folder: F:\00_GAME\MAX_Hole\0_Favorite\favorite_book\Amazon\images 
+[Info] Found 2 image files 
+[Process] 01.jpg 
+[Debug] File size: 292634 bytes 
+[Debug] Dimensions: 2048x2048 
+[Debug] isSquare=1, isSmallEnough=0 
+[Info] Size: 2048x2048, File: 292634 bytes 
+[Action] Crop to 2048x2048 and compress to JPG... 
+[Info] Resizing to 800x800 to help reduce file size 
+[Debug] After first compress: 101894 bytes 
+[Debug] Final size: 101894 bytes 
+[Success] 01.jpg done, Final: 101894 bytes 
+[Process] 02.png 
+[Debug] File size: 305042 bytes 
+[Debug] Dimensions: 716x732 
+[Debug] isSquare=0, isSmallEnough=0 
+[Info] Size: 716x732, File: 305042 bytes 
+[Action] Crop to 716x716 and compress to JPG... 
+[Info] Resizing to 716x716 to help reduce file size 
+[Debug] After first compress: 49072 bytes 
+[Debug] Final size: 49072 bytes 
+[Success] 02.png -> 02.jpg, Final: 49072 bytes 
+ 
+========================================== 
+ Done 
+ Success: 2 files 
+ Skipped: 0 files (already OK) 
+ Failed: 0 files 
+ End: å‘¨æ—¥ 2026/02/15 22:23:19.51 
+========================================== 

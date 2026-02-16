@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon POM Manager - 亚马逊选品整理工具</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="mobile/css/mobile.css">
+</head>
+<body>
+    <!-- 页面右上角控制按钮 -->
+    <div class="top-right-controls">
+        <button id="stats-btn" class="btn">数据简报</button>
+    </div>
+
+    <!-- 右侧功能按钮栏 -->
+    <div class="top-function-bar">
+        <button id="export-excel-btn" class="function-bubble" data-action="export">导出Excel</button>
+        <button id="import-excel-btn" class="function-bubble" data-action="import">导入Excel</button>
+        <button id="add-product-btn" class="function-bubble" data-action="add-product">新增商品</button>
+        <button id="sales-calendar-btn" class="function-bubble" data-action="calendar">销量月历</button>
+        <button id="todo-board-btn" class="function-bubble" data-action="todo">待办看板</button>
+        <button id="admin-center-btn" class="function-bubble" data-action="admin">管理中心</button>
+    </div>
+
+    <!-- 固定Banner区域 -->
+    <div class="fixed-banner">
+        <!-- 顶部标题栏 -->
+        <header class="header">
+            <h1>Amazon POM Manager</h1>
+            <p class="subtitle">亚马逊选品整理</p>
+        </header>
+
+        <!-- 统计简报卡片 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-value" id="stat-total-products">0</span>
+                <span class="stat-label">总选品数</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-favorite">0</span>
+                <span class="stat-label">运维商品</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-today-sales">0</span>
+                <span class="stat-label">今日销量</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-total-sales">0</span>
+                <span class="stat-label">总销量</span>
+            </div>
+        </div>
+
+        <!-- 筛选栏 -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">全部商品</button>
+                <button class="filter-btn" data-filter="favorite">⭐ 收藏夹</button>
+                <button class="filter-btn" data-filter="todo">待办中</button>
+                <button class="filter-btn" data-filter="done">已完成</button>
+                <button class="filter-btn" data-filter="archived">📦 归档</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="搜索商品名称...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 分类筛选栏（独立区域） -->
+    <nav class="category-nav" id="category-nav-bar">
+        <button class="category-btn active" data-category="all">全部类目</button>
+        <!-- 分类按钮将通过JavaScript动态生成 -->
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="main-layout">
+        <!-- 商品表格展示区域 -->
+        <div class="product-table-container">
+            <table class="product-table" id="product-table">
+                <thead>
+                    <tr id="table-header-row">
+                        <th class="col-image">商品图</th>
+                        <th class="col-favorite">收藏</th>
+                        <th class="col-category">类目</th>
+                        <th class="col-subcategory">小类名称</th>
+                        <th class="col-name">商品名称</th>
+                        <th class="col-price">价格</th>
+                        <th class="col-sales">月销量</th>
+                        <th class="col-revenue">销售额</th>
+                        <th class="col-profit-margin">毛利率</th>
+                        <th class="col-launch-date">上架日期</th>
+                        <th class="col-rating">评分</th>
+                        <th class="col-review-count">评论数</th>
+                        <th class="col-children">变体数</th>
+                        <th class="col-dimensions">包装尺寸</th>
+                        <th class="col-weight">商品重量</th>
+                        <th class="col-fba">FBA运费</th>
+                        <th class="col-tasks" id="header-tasks">今日运维</th>
+                        <th class="col-status" id="header-status">状态</th>
+                        <th class="col-actions">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body">
+                    <!-- 商品数据将通过JavaScript动态生成 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 管理中心侧边栏 -->
+    <div id="admin-sidebar" class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>管理中心</h2>
+            <button class="close-sidebar">&times;</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3>分类管理</h3>
+                <button id="add-category-btn" class="sidebar-btn">增加分类</button>
+                <div class="category-list" id="sidebar-category-list">
+                    <!-- 分类列表将动态生成 -->
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3>数据管理</h3>
+                <button id="delete-all-products-btn" class="sidebar-btn danger">一键删除所有商品</button>
+                <button id="clear-sales-btn" class="sidebar-btn danger">清空销量记录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 侧边栏遮罩 -->
+    <div id="sidebar-overlay" class="sidebar-overlay" style="display: none;"></div>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <!-- 模态框内容将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 外部库引用 -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- JavaScript文件引用 -->
+    <script src="data/0-origin.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/sample_data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/excel.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
