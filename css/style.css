@@ -1274,28 +1274,26 @@ body {
 
 @media (max-width: 768px) {
     .fixed-banner {
-        left: 10px;
-        right: 10px;
-        top: 10px;
-        padding: 15px;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 12px 10px;
+        border-radius: 0;
     }
     
     .main-layout {
-        left: 10px;
-        right: 10px;
-        top: 280px;
+        left: 0;
+        right: 0;
+        top: auto;
+        position: relative;
     }
     
     .top-function-bar {
-        position: static;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 10px;
+        display: none;
     }
     
     .header h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .product-table {
@@ -1312,16 +1310,43 @@ body {
         right: -100%;
     }
     
+    /* 统计卡片横向滚动，不换行 */
     .stats-bar {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding: 8px 0;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .stats-bar::-webkit-scrollbar {
+        display: none;
     }
     
     .stat-card {
-        min-width: 80px;
-        padding: 8px 12px;
+        flex-shrink: 0;
+        min-width: 70px;
+        padding: 8px 10px;
     }
     
     .stat-value {
         font-size: 18px;
+    }
+    
+    /* 筛选栏不换行 */
+    .filter-bar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .filter-group {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    
+    .filter-group::-webkit-scrollbar {
+        display: none;
     }
 }
