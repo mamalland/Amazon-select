@@ -18,7 +18,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.71,
     "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 10.0,
@@ -46,7 +46,7 @@ const ORIGIN_DATA = {
     "fbaFee": 7.53,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 44.2,
@@ -72,9 +72,9 @@ const ORIGIN_DATA = {
     "monthlySales": 32,
     "childCount": 2,
     "fbaFee": 6.61,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 42.9,
@@ -99,7 +99,7 @@ const ORIGIN_DATA = {
     "fbaFee": 0,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 12.7,
@@ -124,9 +124,9 @@ const ORIGIN_DATA = {
     "monthlySales": 147,
     "childCount": 4,
     "fbaFee": 0,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "launchDate": "2025-12-12",
     "rating": 5.0,
@@ -145,9 +145,9 @@ const ORIGIN_DATA = {
     "monthlySales": 188,
     "childCount": 1,
     "fbaFee": 6.67,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 30.5,
@@ -172,9 +172,9 @@ const ORIGIN_DATA = {
     "monthlySales": 128,
     "childCount": 3,
     "fbaFee": 0,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 40.6,
@@ -198,7 +198,7 @@ const ORIGIN_DATA = {
     "fbaFee": 3.84,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 8.6,
@@ -223,9 +223,9 @@ const ORIGIN_DATA = {
     "monthlySales": 147,
     "childCount": 1,
     "fbaFee": 4.2,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 17.8,
@@ -250,9 +250,9 @@ const ORIGIN_DATA = {
     "monthlySales": 300,
     "childCount": 1,
     "fbaFee": 5.04,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 26.7,
@@ -279,7 +279,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.57,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 32.8,
@@ -306,7 +306,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.13,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 18.0,
@@ -333,7 +333,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.15,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 15.5,
@@ -360,7 +360,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.71,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 13.5,
@@ -387,7 +387,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.6,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 31.0,
@@ -414,7 +414,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.71,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 17.3,
@@ -439,9 +439,9 @@ const ORIGIN_DATA = {
     "monthlySales": 116,
     "childCount": 1,
     "fbaFee": 6.67,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 25.9,
@@ -466,9 +466,9 @@ const ORIGIN_DATA = {
     "monthlySales": 107,
     "childCount": 1,
     "fbaFee": 3.45,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 12.4,
@@ -494,7 +494,7 @@ const ORIGIN_DATA = {
     "fbaFee": 8.01,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 43.7,
@@ -521,7 +521,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.04,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 21.3,
@@ -548,7 +548,7 @@ const ORIGIN_DATA = {
     "fbaFee": 3.32,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 6.9,
@@ -573,9 +573,9 @@ const ORIGIN_DATA = {
     "monthlySales": 65,
     "childCount": 15,
     "fbaFee": 0,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "weightG": 349.0,
     "launchDate": "2025-12-12",
@@ -595,9 +595,9 @@ const ORIGIN_DATA = {
     "monthlySales": 44,
     "childCount": 2,
     "fbaFee": 3.95,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 14.5,
@@ -624,7 +624,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.95,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 23.6,
@@ -651,7 +651,7 @@ const ORIGIN_DATA = {
     "fbaFee": 6.37,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 33.8,
@@ -676,9 +676,9 @@ const ORIGIN_DATA = {
     "monthlySales": 302,
     "childCount": 1,
     "fbaFee": 3.91,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 23.2,
@@ -705,7 +705,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.04,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 16.3,
@@ -730,7 +730,7 @@ const ORIGIN_DATA = {
     "fbaFee": 7.24,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 26.2,
@@ -757,7 +757,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.06,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 8.9,
@@ -784,7 +784,7 @@ const ORIGIN_DATA = {
     "fbaFee": 3.95,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 34.3,
@@ -811,7 +811,7 @@ const ORIGIN_DATA = {
     "fbaFee": 7.31,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 39.2,
@@ -836,9 +836,9 @@ const ORIGIN_DATA = {
     "monthlySales": 335,
     "childCount": 1,
     "fbaFee": 5.82,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 32.0,
@@ -863,9 +863,9 @@ const ORIGIN_DATA = {
     "monthlySales": 236,
     "childCount": 1,
     "fbaFee": 5.68,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 26.9,
@@ -888,9 +888,9 @@ const ORIGIN_DATA = {
     "monthlySales": 78,
     "childCount": 2,
     "fbaFee": 5.82,
-    "isFavorite": false,
+    "isFavorite": true,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 43.4,
@@ -915,7 +915,7 @@ const ORIGIN_DATA = {
     "fbaFee": 7.53,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.150416",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 35.6,
@@ -942,7 +942,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.94,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 18.5,
@@ -969,7 +969,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.2,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 13.2,
@@ -996,7 +996,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.93,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 41.4,
@@ -1023,7 +1023,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.95,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 33.0,
@@ -1050,7 +1050,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.2,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 22.1,
@@ -1075,7 +1075,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.83,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 17.8,
@@ -1102,7 +1102,7 @@ const ORIGIN_DATA = {
     "fbaFee": 3.95,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 12.7,
@@ -1129,7 +1129,7 @@ const ORIGIN_DATA = {
     "fbaFee": 10.91,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 44.5,
@@ -1156,7 +1156,7 @@ const ORIGIN_DATA = {
     "fbaFee": 0,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 22.4,
@@ -1182,7 +1182,7 @@ const ORIGIN_DATA = {
     "fbaFee": 5.04,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 18.0,
@@ -1209,7 +1209,7 @@ const ORIGIN_DATA = {
     "fbaFee": 4.6,
     "isFavorite": false,
     "isArchived": false,
-    "createdAt": "2026-02-23T21:04:27.151981",
+    "createdAt": "2026-02-23T21:11:10.614547",
     "updatedAt": null,
     "dimensions": {
       "length": 40.1,
@@ -1225,82 +1225,82 @@ const ORIGIN_DATA = {
   {
     "id": "cat_0",
     "name": "宠物",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_1",
     "name": "Home & Kitchen",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_2",
     "name": "Automotive",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_3",
     "name": "Office Products",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_4",
     "name": "Tools & Home Improvement",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_5",
     "name": "Industrial & Scientific",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_6",
     "name": "Arts, Crafts & Sewing",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_7",
     "name": "Health & Household",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_8",
     "name": "Patio, Lawn & Garden",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_9",
     "name": "Pet Supplies",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_10",
     "name": "Sports & Outdoors",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_11",
     "name": "Baby",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_12",
     "name": "Cell Phones & Accessories",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_13",
     "name": "Kitchen & Dining",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_14",
     "name": "Video Games",
-    "createdAt": "2026-02-23T21:04:27.150416"
+    "createdAt": "2026-02-23T21:11:10.614547"
   },
   {
     "id": "cat_15",
     "name": "Camera & Photo Products",
-    "createdAt": "2026-02-23T21:04:27.151981"
+    "createdAt": "2026-02-23T21:11:10.614547"
   }
 ],
     taskStatus: {
@@ -1328,6 +1328,384 @@ const ORIGIN_DATA = {
     },
     "underline": {
       "status": "locked",
+      "lastUpdated": null
+    }
+  },
+  "prod_4": {
+    "productId": "prod_4",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_6": {
+    "productId": "prod_6",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_7": {
+    "productId": "prod_7",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_8": {
+    "productId": "prod_8",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_10": {
+    "productId": "prod_10",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_11": {
+    "productId": "prod_11",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_18": {
+    "productId": "prod_18",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_19": {
+    "productId": "prod_19",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_23": {
+    "productId": "prod_23",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_24": {
+    "productId": "prod_24",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_27": {
+    "productId": "prod_27",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_33": {
+    "productId": "prod_33",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_34": {
+    "productId": "prod_34",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
+      "lastUpdated": null
+    }
+  },
+  "prod_35": {
+    "productId": "prod_35",
+    "mainImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "aPlusImage": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "autoAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "manualAd": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "coupon": {
+      "status": "pending",
+      "lastUpdated": null
+    },
+    "underline": {
+      "status": "pending",
       "lastUpdated": null
     }
   }
