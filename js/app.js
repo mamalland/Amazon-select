@@ -232,15 +232,15 @@ function showStatsBriefing() {
 
 /**
  * 加载 ORIGIN_DATA 到数据库
- * 注意：只导入不存在的数据，不覆盖已有数据（保留用户修改）
+ * 更新策略：新增商品直接添加，已有商品更新基础属性（保留用户修改的运维数据）
  */
 async function loadOriginData() {
     try {
         console.log('Loading ORIGIN_DATA...');
 
-        // 获取现有数据，避免覆盖
+        // 获取现有数据
         const existingProducts = await DB.products.getAll();
-        const existingProductIds = new Set(existingProducts.map(p => p.id));
+        const existingProductMap = new Map(existingProducts.map(p => [p.id, p]));
 
         let existingCategories = await DB.categories.getAll();
         
@@ -254,18 +254,47 @@ async function loadOriginData() {
         
         const existingCategoryIds = new Set(existingCategories.map(c => c.id));
 
-        // 加载商品（只导入不存在的）
+        // 加载商品（新增或更新）
         let newProductIds = new Set();
         if (ORIGIN_DATA.products && ORIGIN_DATA.products.length > 0) {
             let addedCount = 0;
+            let updatedCount = 0;
             for (const product of ORIGIN_DATA.products) {
-                if (!existingProductIds.has(product.id)) {
+                const existing = existingProductMap.get(product.id);
+                if (!existing) {
+                    // 新增商品
                     await DB.products.add(product);
                     newProductIds.add(product.id);
                     addedCount++;
+                } else {
+                    // 更新现有商品的基础属性（保留id、isFavorite、isArchived、createdAt等用户数据）
+                    const updatedProduct = {
+                        ...existing,  // 保留现有数据
+                        // 更新基础属性
+                        asin: product.asin || existing.asin,
+                        category: product.category || existing.category,
+                        subCategory: product.subCategory || existing.subCategory,
+                        name: product.name || existing.name,
+                        imageUrl: product.imageUrl || existing.imageUrl,
+                        productUrl: product.productUrl || existing.productUrl,
+                        procurementUrl: product.procurementUrl || existing.procurementUrl,
+                        price: product.price !== undefined ? product.price : existing.price,
+                        monthlySales: product.monthlySales !== undefined ? product.monthlySales : existing.monthlySales,
+                        childCount: product.childCount !== undefined ? product.childCount : existing.childCount,
+                        fbaFee: product.fbaFee !== undefined ? product.fbaFee : existing.fbaFee,
+                        profitMargin: product.profitMargin !== undefined ? product.profitMargin : existing.profitMargin,
+                        launchDate: product.launchDate || existing.launchDate,
+                        rating: product.rating !== undefined ? product.rating : existing.rating,
+                        reviewCount: product.reviewCount !== undefined ? product.reviewCount : existing.reviewCount,
+                        dimensions: product.dimensions || existing.dimensions,
+                        weightG: product.weightG !== undefined ? product.weightG : existing.weightG,
+                        updatedAt: new Date().toISOString()
+                    };
+                    await DB.products.update(updatedProduct);
+                    updatedCount++;
                 }
             }
-            console.log(`Added ${addedCount} new products`);
+            console.log(`Added ${addedCount} new products, Updated ${updatedCount} existing products`);
         }
         
         // 首次加载：将收藏商品的 monthlySales 作为当月首日的销量记录

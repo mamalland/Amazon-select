@@ -21,6 +21,7 @@ function exportToExcel() {
         '商品名称': item.name,
         '商品图片URL': item.imageUrl || '',
         '商品链接': item.productUrl || '',
+        '1688采购链接': item.procurementUrl || '',
         '价格': item.price,
         '月销量': item.monthlySales,
         '销售额': item.price * item.monthlySales,
@@ -54,9 +55,11 @@ function exportToExcel() {
     const colWidths = [
         { wch: 15 }, // ASIN
         { wch: 12 }, // 类目
+        { wch: 15 }, // 小类名称
         { wch: 40 }, // 商品名称
         { wch: 50 }, // 商品图片URL
         { wch: 50 }, // 商品链接
+        { wch: 50 }, // 1688采购链接
         { wch: 10 }, // 价格
         { wch: 10 }, // 月销量
         { wch: 12 }, // 销售额
@@ -126,6 +129,7 @@ function showImportModal() {
                     <li>商品名称 - 商品名称（必填）</li>
                     <li>商品图片URL - 商品图片链接（可选）</li>
                     <li>商品链接 - 商品详情页链接（可选）</li>
+                    <li>1688采购链接 - 1688采购链接（可选）</li>
                     <li>价格 - 商品价格</li>
                     <li>月销量 - 月销量数据</li>
                     <li>毛利率(%) - 毛利率百分比（可选）</li>
@@ -246,6 +250,7 @@ async function processImportData(data) {
         name: getColumnIndex('商品名称'),
         imageUrl: getColumnIndex('图片') !== -1 ? getColumnIndex('图片') : getColumnIndex('商品图片URL'),
         productUrl: getColumnIndex('链接') !== -1 ? getColumnIndex('链接') : getColumnIndex('商品链接'),
+        procurementUrl: getColumnIndex('采购') !== -1 ? getColumnIndex('采购') : getColumnIndex('1688采购链接'),
         subCategory: getColumnIndex('小类') !== -1 ? getColumnIndex('小类') : getColumnIndex('小类名称'),
         price: getColumnIndex('价格'),
         monthlySales: getColumnIndex('月销量'),
@@ -294,6 +299,7 @@ async function processImportData(data) {
                 name: String(row[colIndex.name] || '').trim(),
                 imageUrl: colIndex.imageUrl >= 0 ? String(row[colIndex.imageUrl] || '') : '',
                 productUrl: colIndex.productUrl >= 0 ? String(row[colIndex.productUrl] || '') : '',
+                procurementUrl: colIndex.procurementUrl >= 0 ? String(row[colIndex.procurementUrl] || '') : '',
                 subCategory: colIndex.subCategory >= 0 ? String(row[colIndex.subCategory] || '') : '',
                 price: colIndex.price >= 0 ? parseFloat(row[colIndex.price]) || 0 : 0,
                 monthlySales: colIndex.monthlySales >= 0 ? parseInt(row[colIndex.monthlySales]) || 0 : 0,
@@ -341,6 +347,7 @@ async function processImportData(data) {
                 existing.subCategory = productData.subCategory || existing.subCategory;
                 existing.imageUrl = productData.imageUrl || existing.imageUrl;
                 existing.productUrl = productData.productUrl || existing.productUrl;
+                existing.procurementUrl = productData.procurementUrl || existing.procurementUrl;
                 existing.price = productData.price;
                 existing.monthlySales = productData.monthlySales;
                 existing.childCount = productData.childCount;

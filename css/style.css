@@ -362,6 +362,7 @@ body {
 .col-category { min-width: 80px; width: 8%; }
 .col-subcategory { min-width: 100px; width: 10%; }
 .col-name { min-width: 150px; width: 15%; }
+.col-procurement { min-width: 80px; width: 6%; text-align: center; }
 .col-price { min-width: 60px; width: 6%; }
 .col-sales { min-width: 60px; width: 6%; }
 .col-revenue { min-width: 80px; width: 8%; }
@@ -619,9 +620,42 @@ body {
     color: white;
 }
 
+.action-btn.procurement {
+    background-color: #ff6b35;
+    color: white;
+}
+
 .action-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
+}
+
+/* 采购链接按钮 */
+.procurement-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.procurement-btn:hover {
+    background-color: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.procurement-btn.disabled {
+    background-color: var(--btn-inactive-bg);
+    cursor: not-allowed;
 }
 
 /* 空状态 */

@@ -119,6 +119,9 @@ function renderProductTable() {
                 ${statusCell}
                 <td class="col-actions">
                     <div class="action-btns">
+                        ${product.procurementUrl ? 
+                            `<a href="${product.procurementUrl}" target="_blank" class="action-btn procurement">采购</a>` : ''
+                        }
                         <button class="action-btn edit" onclick="handleEditClick('${product.id}')">编辑</button>
                         <button class="action-btn sales" onclick="handleSalesClick('${product.id}')">销量</button>
                         ${product.isArchived ? 
@@ -601,6 +604,10 @@ async function handleEditClick(productId) {
                 <input type="url" name="productUrl" value="${product.productUrl || ''}" placeholder="https://www.amazon.com/dp/...">
             </div>
             <div class="form-group">
+                <label>1688采购链接 (可选)</label>
+                <input type="url" name="procurementUrl" value="${product.procurementUrl || ''}" placeholder="https://detail.1688.com/...">
+            </div>
+            <div class="form-group">
                 <label>小类名称 (可选)</label>
                 <input type="text" name="subCategory" value="${product.subCategory || ''}" placeholder="如：蓝牙耳机">
             </div>
@@ -692,6 +699,7 @@ async function handleEditClick(productId) {
         product.name = formData.get('name');
         product.imageUrl = formData.get('imageUrl') || null;
         product.productUrl = formData.get('productUrl') || null;
+        product.procurementUrl = formData.get('procurementUrl') || null;
         product.subCategory = formData.get('subCategory') || null;
         product.price = parseFloat(formData.get('price'));
         product.monthlySales = parseInt(formData.get('monthlySales'));
@@ -1007,6 +1015,10 @@ function showAddProductModal() {
                 <input type="url" name="productUrl" placeholder="https://www.amazon.com/dp/...">
             </div>
             <div class="form-group">
+                <label>1688采购链接 (可选)</label>
+                <input type="url" name="procurementUrl" placeholder="https://detail.1688.com/...">
+            </div>
+            <div class="form-group">
                 <label>小类名称 (可选)</label>
                 <input type="text" name="subCategory" placeholder="如：蓝牙耳机">
             </div>
@@ -1060,6 +1072,7 @@ function showAddProductModal() {
             name: formData.get('name'),
             imageUrl: formData.get('imageUrl') || null,
             productUrl: formData.get('productUrl') || null,
+            procurementUrl: formData.get('procurementUrl') || null,
             subCategory: formData.get('subCategory') || null,
             price: parseFloat(formData.get('price')),
             monthlySales: parseInt(formData.get('monthlySales')),
