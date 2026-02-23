@@ -534,6 +534,20 @@ function clearAllTaskStatus() {
     });
 }
 
+/**
+ * 清空所有商品
+ */
+function clearAllProducts() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(['products'], 'readwrite');
+        const store = transaction.objectStore('products');
+        const request = store.clear();
+
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+    });
+}
+
 // 导出数据库函数
 window.DB = {
     init: initDatabase,
@@ -545,7 +559,8 @@ window.DB = {
         update: updateProduct,
         delete: deleteProduct,
         getAll: getAllProducts,
-        getById: getProductById
+        getById: getProductById,
+        clear: clearAllProducts
     },
     tasks: {
         get: getTaskStatus,

@@ -9,19 +9,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         await DB.init();
         console.log('数据库初始化成功');
 
-        // 检查是否是首次加载（数据库是否为空）
-        const existingProducts = await DB.products.getAll();
-        const isFirstLoad = existingProducts.length === 0;
-
-        if (isFirstLoad) {
-            console.log('首次加载，检查 ORIGIN_DATA...');
-            // 首次加载：尝试从 0-origin.js 导入数据
-            if (typeof ORIGIN_DATA !== 'undefined' && ORIGIN_DATA) {
-                console.log('发现 ORIGIN_DATA，正在导入...');
-                await loadOriginData();
-            }
+        // 静态模式：每次优先从 0-origin.js 加载数据
+        console.log('静态模式：优先从 0-origin.js 加载数据...');
+        if (typeof ORIGIN_DATA !== 'undefined' && ORIGIN_DATA) {
+            console.log('发现 ORIGIN_DATA，正在导入...');
+            await loadOriginData();
         } else {
-            console.log('使用浏览器缓存数据');
+            console.warn('未找到 ORIGIN_DATA，请检查 0-origin.js 是否正确加载');
         }
 
         // 初始化数据
@@ -231,144 +225,72 @@ function showStatsBriefing() {
 }
 
 /**
- * 加载 ORIGIN_DATA 到数据库
- * 更新策略：新增商品直接添加，已有商品更新基础属性（保留用户修改的运维数据）
+ * 加载 ORIGIN_DATA 到数据库（静态模式）
+ * 每次打开页面都会清空数据库并重新从 0-origin.js 导入数据
  */
 async function loadOriginData() {
     try {
-        console.log('Loading ORIGIN_DATA...');
+        console.log('[静态模式] Loading ORIGIN_DATA...');
 
-        // 获取现有数据
-        const existingProducts = await DB.products.getAll();
-        const existingProductMap = new Map(existingProducts.map(p => [p.id, p]));
+        // 静态模式：清空所有现有数据
+        console.log('[静态模式] 清空现有数据...');
+        await DB.products.clear();
+        await DB.categories.clear();
+        await DB.tasks.clear();
+        await DB.sales.clear();
+        console.log('[静态模式] 数据库已清空');
 
-        let existingCategories = await DB.categories.getAll();
-        
-        // 检查是否有损坏的类目数据（name 为对象），如果有则清空重新导入
-        const hasCorruptedCategories = existingCategories.some(c => typeof c.name === 'object');
-        if (hasCorruptedCategories) {
-            console.log('Detected corrupted category data, clearing and re-importing...');
-            await DB.categories.clear();
-            existingCategories = [];
-        }
-        
-        const existingCategoryIds = new Set(existingCategories.map(c => c.id));
-
-        // 加载商品（新增或更新）
-        let newProductIds = new Set();
+        // 加载商品
         if (ORIGIN_DATA.products && ORIGIN_DATA.products.length > 0) {
-            let addedCount = 0;
-            let updatedCount = 0;
             for (const product of ORIGIN_DATA.products) {
-                const existing = existingProductMap.get(product.id);
-                if (!existing) {
-                    // 新增商品
-                    await DB.products.add(product);
-                    newProductIds.add(product.id);
-                    addedCount++;
-                } else {
-                    // 更新现有商品的基础属性（保留id、isFavorite、isArchived、createdAt等用户数据）
-                    const updatedProduct = {
-                        ...existing,  // 保留现有数据
-                        // 更新基础属性
-                        asin: product.asin || existing.asin,
-                        category: product.category || existing.category,
-                        subCategory: product.subCategory || existing.subCategory,
-                        name: product.name || existing.name,
-                        imageUrl: product.imageUrl || existing.imageUrl,
-                        productUrl: product.productUrl || existing.productUrl,
-                        procurementUrl: product.procurementUrl || existing.procurementUrl,
-                        price: product.price !== undefined ? product.price : existing.price,
-                        monthlySales: product.monthlySales !== undefined ? product.monthlySales : existing.monthlySales,
-                        childCount: product.childCount !== undefined ? product.childCount : existing.childCount,
-                        fbaFee: product.fbaFee !== undefined ? product.fbaFee : existing.fbaFee,
-                        profitMargin: product.profitMargin !== undefined ? product.profitMargin : existing.profitMargin,
-                        launchDate: product.launchDate || existing.launchDate,
-                        rating: product.rating !== undefined ? product.rating : existing.rating,
-                        reviewCount: product.reviewCount !== undefined ? product.reviewCount : existing.reviewCount,
-                        dimensions: product.dimensions || existing.dimensions,
-                        weightG: product.weightG !== undefined ? product.weightG : existing.weightG,
-                        updatedAt: new Date().toISOString()
-                    };
-                    await DB.products.update(updatedProduct);
-                    updatedCount++;
-                }
+                await DB.products.add(product);
             }
-            console.log(`Added ${addedCount} new products, Updated ${updatedCount} existing products`);
+            console.log(`[静态模式] 已导入 ${ORIGIN_DATA.products.length} 个商品`);
         }
-        
-        // 首次加载：将收藏商品的 monthlySales 作为当月首日的销量记录
-        // 检查是否已经从 monthlySales 导入过（通过检查特定日期的销量记录）
+
+        // 加载分类
+        if (ORIGIN_DATA.categories && ORIGIN_DATA.categories.length > 0) {
+            for (const category of ORIGIN_DATA.categories) {
+                await DB.categories.add(category.name);
+            }
+            console.log(`[静态模式] 已导入 ${ORIGIN_DATA.categories.length} 个分类`);
+        }
+
+        // 加载任务状态
+        if (ORIGIN_DATA.taskStatus) {
+            for (const [productId, status] of Object.entries(ORIGIN_DATA.taskStatus)) {
+                await DB.tasks.set(productId, status);
+            }
+            console.log(`[静态模式] 已导入 ${Object.keys(ORIGIN_DATA.taskStatus).length} 个任务状态`);
+        }
+
+        // 加载销量数据
+        if (ORIGIN_DATA.sales && ORIGIN_DATA.sales.length > 0) {
+            for (const sale of ORIGIN_DATA.sales) {
+                await DB.sales.set(sale.productId, sale.date, sale.quantity);
+            }
+            console.log(`[静态模式] 已导入 ${ORIGIN_DATA.sales.length} 条销量记录`);
+        }
+
+        // 将收藏商品的 monthlySales 作为当月首日的销量记录
         const today = new Date();
         const year = today.getFullYear();
         const month = today.getMonth() + 1;
         const firstDayOfMonth = `${year}-${String(month).padStart(2, '0')}-01`;
-        
-        // 获取当月首日的销量记录
-        const firstDaySales = await DB.sales.getByDate(firstDayOfMonth);
-        const monthlySalesImported = firstDaySales.length > 0;
-        
-        console.log('[Sales Init] First day sales:', firstDaySales.length, 'Already imported:', monthlySalesImported);
-        
-        if (!monthlySalesImported && ORIGIN_DATA.products) {
-            console.log('First load: initializing sales data from monthlySales...');
-            console.log('[Sales Init] First day of month:', firstDayOfMonth);
-            
+
+        if (ORIGIN_DATA.products) {
             let salesAdded = 0;
             for (const product of ORIGIN_DATA.products) {
-                console.log(`[Sales Init] Checking product ${product.id}: isFavorite=${product.isFavorite}, monthlySales=${product.monthlySales}`);
-                // 只处理收藏商品且有销量的
                 if (product.isFavorite && product.monthlySales > 0) {
-                    console.log(`[Sales Init] Adding sales for ${product.id}: ${product.monthlySales}`);
                     try {
                         await DB.sales.set(product.id, firstDayOfMonth, product.monthlySales);
                         salesAdded++;
-                        console.log(`[Sales Init] Successfully added sales for ${product.id}`);
                     } catch (err) {
                         console.error(`[Sales Init] Error adding sales for ${product.id}:`, err);
                     }
                 }
             }
-            console.log(`Initialized ${salesAdded} sales records from monthlySales`);
-        } else {
-            console.log('[Sales Init] Skipping sales initialization. monthlySalesImported:', monthlySalesImported, 'ORIGIN_DATA.products:', !!ORIGIN_DATA.products);
-        }
-
-        // 加载分类（只导入不存在的）
-        if (ORIGIN_DATA.categories && ORIGIN_DATA.categories.length > 0) {
-            let addedCount = 0;
-            for (const category of ORIGIN_DATA.categories) {
-                if (!existingCategoryIds.has(category.id)) {
-                    // 传递类目名称而不是整个对象
-                    await DB.categories.add(category.name);
-                    addedCount++;
-                }
-            }
-            console.log(`Added ${addedCount} new categories`);
-        }
-
-        // 加载任务状态（首次加载时覆盖，后续保留用户修改）
-        if (ORIGIN_DATA.taskStatus) {
-            console.log('TaskStatus data found:', Object.keys(ORIGIN_DATA.taskStatus));
-
-            // 首次加载：清空现有任务状态并重新导入
-            // 这样可以确保 0-origin.js 中的状态被正确应用
-            console.log('First load: clearing and re-importing task statuses from ORIGIN_DATA');
-            await DB.tasks.clear();
-
-            let addedCount = 0;
-            for (const [productId, status] of Object.entries(ORIGIN_DATA.taskStatus)) {
-                console.log(`Importing task status for ${productId}:`, JSON.parse(JSON.stringify(status)));
-                await DB.tasks.set(productId, status);
-                addedCount++;
-            }
-            console.log(`Imported ${addedCount} task statuses from ORIGIN_DATA`);
-
-            // 验证导入结果
-            const afterImport = await DB.tasks.getAll();
-            console.log('Task statuses after import:', afterImport.length, afterImport.map(s => ({ id: s.productId, mainImage: s.mainImage?.status })));
-        } else {
-            console.log('No taskStatus data found in ORIGIN_DATA');
+            console.log(`[静态模式] 已初始化 ${salesAdded} 个商品的月销量记录`);
         }
 
         // 为所有没有任务状态的商品创建默认任务状态
@@ -378,7 +300,6 @@ async function loadOriginData() {
 
         for (const product of allProducts) {
             if (!productIdsWithStatus.has(product.id)) {
-                console.log(`Creating default task status for ${product.id}`);
                 const defaultStatus = {
                     productId: product.id,
                     mainImage: { status: 'pending', lastUpdated: null },
@@ -391,23 +312,9 @@ async function loadOriginData() {
                 await DB.tasks.set(product.id, defaultStatus);
             }
         }
-        
-        // 加载销量（只导入不存在的）
-        if (ORIGIN_DATA.sales && ORIGIN_DATA.sales.length > 0) {
-            let addedCount = 0;
-            for (const sale of ORIGIN_DATA.sales) {
-                const existingSales = await DB.sales.getByProduct(sale.productId);
-                const exists = existingSales.some(s => s.date === sale.date);
-                if (!exists) {
-                    await DB.sales.set(sale.productId, sale.date, sale.quantity);
-                    addedCount++;
-                }
-            }
-            console.log(`Added ${addedCount} new sales records`);
-        }
-        
-        console.log('ORIGIN_DATA loaded successfully!');
+
+        console.log('[静态模式] ORIGIN_DATA 加载完成！');
     } catch (error) {
-        console.error('Failed to load ORIGIN_DATA:', error);
+        console.error('[静态模式] 加载 ORIGIN_DATA 失败:', error);
     }
 }
