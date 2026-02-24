@@ -53,25 +53,25 @@
         right: 0;
         top: 0;
         width: 100%;
-        padding: 12px 10px;
-        margin-bottom: 10px;
+        padding: 4px 5px;
+        margin-bottom: 3px;
         border-radius: 0;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         z-index: 10;
     }
     
     .header {
-        margin-bottom: 8px;
-        padding: 3px;
+        margin-bottom: 2px;
+        padding: 2px;
     }
-    
+
     .header h1 {
-        font-size: 18px;
+        font-size: 12px;
     }
-    
+
     .header .subtitle {
-        font-size: 11px;
-        margin-top: 2px;
+        font-size: 7px;
+        margin-top: 1px;
     }
     
     /* 统计卡片 - 居中显示 */
@@ -79,72 +79,72 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 8px;
-        padding: 8px 0;
-        margin-bottom: 10px;
+        gap: 6px;
+        padding: 5px 0;
+        margin-bottom: 5px;
         flex-wrap: nowrap;
     }
-    
+
     .stat-card {
         flex: 1;
-        max-width: 80px;
-        padding: 10px 8px;
-        border-radius: 8px;
+        max-width: 70px;
+        padding: 3px 3px;
+        border-radius: 6px;
         text-align: center;
     }
-    
+
     .stat-value {
-        font-size: 18px;
+        font-size: 12px;
     }
-    
+
     .stat-label {
-        font-size: 10px;
-        margin-top: 2px;
+        font-size: 7px;
+        margin-top: -1px;
     }
     
     /* 筛选栏调整 - 紧凑布局，按钮整体缩小 */
     .filter-bar {
         flex-direction: row;
-        gap: 8px;
+        gap: 6px;
         align-items: center;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
     }
-    
+
     .filter-group {
         display: flex;
         overflow-x: auto;
-        gap: 6px;
+        gap: 4px;
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
-        padding: 3px 0;
+        padding: 2px 0;
         flex-wrap: nowrap;
         flex: 1;
     }
-    
+
     .filter-group::-webkit-scrollbar {
         display: none;
     }
-    
+
     .filter-btn {
         flex-shrink: 0;
-        padding: 6px 10px;
-        font-size: 11px;
-        border-radius: 15px;
+        padding: 3px 6px;
+        font-size: 10px;
+        border-radius: 12px;
         white-space: nowrap;
     }
     
     /* 搜索框缩小 */
     .search-box {
-        flex: 0 0 auto;
-        max-width: 110px;
+        flex: flex;
+        max-width: 100px;
     }
-    
+
     .search-box input {
         width: 100%;
-        padding: 5px 10px;
-        border-radius: 12px;
+        padding: 3px 6px;
+        border-radius: 10px;
         border: 1px solid var(--border-light);
-        font-size: 11px;
+        font-size: 10px;
     }
     
     /* 分类导航 - 手机端紧凑布局 */
@@ -154,15 +154,15 @@
         top: auto !important;
         left: auto !important;
         right: auto !important;
-        padding: 5px 0;
-        margin: 5px 0 15px 0;
+        padding: 4px 0;
+        margin: 4px 0 10px 0;
         background: transparent;
         width: 100%;
         border-bottom: 1px solid var(--border-light);
         box-shadow: none !important;
         z-index: auto !important;
         overflow-x: auto;
-        gap: 6px;
+        gap: 4px;
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
         flex-wrap: nowrap;
@@ -175,16 +175,16 @@
     /* 分类按钮统一样式 - 更紧凑 */
     .category-nav .category-btn {
         flex-shrink: 0;
-        padding: 5px 10px;
-        font-size: 11px;
+        padding: 4px 8px;
+        font-size: 10px;
         white-space: nowrap;
         background: var(--bg-gray);
         color: var(--text-primary);
         border: 1px solid var(--border-medium);
-        border-radius: 12px;
+        border-radius: 10px;
         cursor: pointer;
         transition: all 0.3s ease;
-        line-height: 1.3;
+        line-height: 1.2;
     }
     
     .category-nav .category-btn.active {
@@ -201,10 +201,10 @@
         top: auto !important;
         bottom: auto !important;
         width: 100%;
-        padding: 15px;
+        padding: 10px;
         height: auto;
         overflow: visible;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     
     /* 表格容器 - 改为卡片布局 */
@@ -358,56 +358,56 @@
 
 @media (max-width: 375px) {
     .header h1 {
-        font-size: 16px;
+        font-size: 14px;
     }
-    
+
     .header .subtitle {
-        font-size: 10px;
-    }
-    
-    .stat-card {
-        flex: 1;
-        max-width: 70px;
-        padding: 8px 6px;
-    }
-    
-    .stat-value {
-        font-size: 16px;
-    }
-    
-    .stat-label {
         font-size: 9px;
     }
-    
+
+    .stat-card {
+        flex: 1;
+        max-width: 60px;
+        padding: 5px 3px;
+    }
+
+    .stat-value {
+        font-size: 14px;
+    }
+
+    .stat-label {
+        font-size: 8px;
+    }
+
     .filter-btn {
-        padding: 5px 8px;
-        font-size: 10px;
-        border-radius: 12px;
+        padding: 3px 6px;
+        font-size: 9px;
+        border-radius: 10px;
     }
-    
+
     .category-btn {
-        padding: 4px 8px;
-        font-size: 10px;
-        border-radius: 10px;
+        padding: 3px 6px;
+        font-size: 9px;
+        border-radius: 8px;
     }
-    
+
     .search-box {
-        max-width: 90px;
+        max-width: 80px;
     }
-    
+
     .search-box input {
-        padding: 4px 8px;
-        font-size: 10px;
-        border-radius: 10px;
+        padding: 3px 6px;
+        font-size: 9px;
+        border-radius: 8px;
     }
-    
+
     .product-table {
-        font-size: 12px;
+        font-size: 11px;
     }
-    
+
     .product-table th,
     .product-table td {
-        padding: 8px 6px;
+        padding: 6px 4px;
     }
 }
 
