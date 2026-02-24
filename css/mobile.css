@@ -33,16 +33,16 @@
     /* 右上角按钮调整 - 缩小尺寸 */
     .top-right-controls {
         position: fixed;
-        top: 10px;
+        top: 8px;
         right: 10px;
         z-index: 1001;
     }
     
     .top-right-controls .btn {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 4px 8px;
+        font-size: 10px;
         min-width: auto;
-        height: 32px;
+        height: 28px;
         width: auto;
     }
     
